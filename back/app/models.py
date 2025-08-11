@@ -16,6 +16,3 @@ class ServiceDetail(models.Model):
         return self.name
 
 
-from django.db import models
-
-# Create your models here.
