@@ -1,18 +1,15 @@
-from .models import Service, ServiceDetail
 from django.contrib import admin
+from .models import Service, ServiceDetail
 
+class ServiceDetailInline(admin.TabularInline):
+    model = ServiceDetail
+    extra = 1
 
+@admin.register(Service)
 class ServiceAdmin(admin.ModelAdmin):
-    list_display = ['id', 'name']
-    search_fields = ['name']
-    ordering = ['name']
+    inlines = [ServiceDetailInline]
+    list_display = ['name']
 
-
+@admin.register(ServiceDetail)
 class ServiceDetailAdmin(admin.ModelAdmin):
-    list_display = ['id', 'service', 'name', 'price']
-    search_fields = ['name']
-    ordering = ['name']
-
-
-admin.site.register(Service, ServiceAdmin)
-admin.site.register(ServiceDetail, ServiceDetailAdmin)
+    list_display = ['name', 'price', 'service']
