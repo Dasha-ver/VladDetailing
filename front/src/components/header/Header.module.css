@@ -1,3 +1,31 @@
+/* Логотип */
+.logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  font-family: 'Inter', sans-serif;
+  color: #fff;
+  margin-right: auto;
+  letter-spacing: -0.5px;
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  transition: text-shadow 0.3s ease;
+}
+
+.logo:hover {
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.3);
+}
+
+.pro {
+  color: #00c6ff;
+}
+
+.by {
+  color: #bbb;
+  font-weight: 500;
+}
+
+/* Хедер */
 .header {
   position: absolute;
   top: 20px;
@@ -11,12 +39,13 @@
 
 .headerContent {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   padding: 1rem 5vw;
   max-width: 100%;
 }
 
+/* Контакты */
 .contactGroup {
   display: flex;
   align-items: center;
@@ -40,6 +69,27 @@
   font-size: 1rem;
   color: #fff;
 }
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .headerContent {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .logo {
+    font-size: 1.4rem;
+    margin-right: 0;
+  }
+
+  .contactGroup {
+    margin-left: 0;
+    font-size: 0.8rem;
+  }
+}
+
+
 
 @media (max-width: 768px) {
   .header {
