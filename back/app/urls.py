@@ -1,4 +1,4 @@
-from django.urls import include, path
+from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from .views import ServiceViewSet
 
@@ -8,3 +8,4 @@ router.register(r'services', ServiceViewSet)
 urlpatterns = [
     path('api/', include(router.urls)),
 ]
+
